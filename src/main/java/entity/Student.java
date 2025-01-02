@@ -1,23 +1,23 @@
 package entity;
 
 public class Student {
-    private String id;
+    private int id;
     private String name;
     private int age;
     private String idCourse;
 
-    public Student(String id, String name, int age, String idCourse) {
+    public Student(int id, String name, int age, String idCourse) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.idCourse = idCourse;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -47,11 +47,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", idCourse=" + idCourse +
-                '}';
+        return String.format("%-5s | %-10s | %-20s | %-10s", id, name, age, idCourse);
     }
 }

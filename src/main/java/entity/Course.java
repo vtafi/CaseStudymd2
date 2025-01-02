@@ -1,17 +1,21 @@
 package entity;
 
 public class Course {
+                // Số thứ tự của từng đối tượng
     private String code;
     private String title;
-    private int credits;
     private String teacher;
 
-    public Course(String code, String title, int credits, String teacher) {
+    // Constructor
+    public Course(String code, String title, String teacher) {
+         // Tự động tăng STT
         this.code = code;
         this.title = title;
-        this.credits = credits;
         this.teacher = teacher;
     }
+
+    // Getter và Setter
+
 
     public String getCode() {
         return code;
@@ -29,14 +33,6 @@ public class Course {
         this.title = title;
     }
 
-    public int getCredits() {
-        return credits;
-    }
-
-    public void setCredits(int credits) {
-        this.credits = credits;
-    }
-
     public String getTeacher() {
         return teacher;
     }
@@ -45,13 +41,9 @@ public class Course {
         this.teacher = teacher;
     }
 
+    // Override phương thức toString để định dạng kiểu bảng
     @Override
     public String toString() {
-        return "Course{" +
-                "code='" + code + '\'' +
-                ", title='" + title + '\'' +
-                ", credits=" + credits +
-                ", teacher='" + teacher + '\'' +
-                '}';
+        return String.format(" %-10s | %-10s | %-10s", code, title, teacher);
     }
 }

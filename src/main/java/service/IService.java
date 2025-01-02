@@ -7,9 +7,9 @@ public interface IService <T> {
 
     List<T> save(T t);
 
-    List<T> remove();
+    void remove(int id);
 
-    T update(int id, T t);
+    List<T> update(int id, T t);
 
     T findById(int id);
 

@@ -2,11 +2,11 @@ package service.impl;
 
 import entity.Student;
 import respon.StudentRespon;
-import service.IService;
+import service.IStudentService;
 
 import java.util.List;
 
-public class StudentService implements IService {
+public class StudentService implements IStudentService {
     private static StudentRespon studentRespon = new StudentRespon();
     @Override
     public List<Student> getAll() {
@@ -14,27 +14,28 @@ public class StudentService implements IService {
     }
 
     @Override
-    public List save(Object o) {
-        return List.of();
+    public List<Student> save(Student student) {
+        studentRespon.save(student);
+        return studentRespon.findAll();
     }
 
     @Override
-    public List remove() {
-        return List.of();
+    public void remove(int id) {
+        studentRespon.remove(id);
     }
 
     @Override
-    public Object update(int id, Object o) {
-        return null;
+    public List<Student> update(int id, Student student) {
+        return studentRespon.update(id,student) ;
     }
 
     @Override
-    public Object findById(int id) {
-        return null;
+    public Student findById(int id) {
+        return studentRespon.findByID(id);
     }
 
     @Override
-    public List findByName(String name) {
-        return List.of();
+    public List<Student> findByName(String name) {
+        return studentRespon.findByName(name);
     }
 }
